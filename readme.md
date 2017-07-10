@@ -14,13 +14,14 @@ SUPERPOWERED_ROOT to Superpowered SDK library:
 export SUPERPOWERED_ROOT=/path/to/superpowered
 ```
 
-This path should contain include header files and precompiled libraries for Linux, OS X, etc.
-
-i.e.
+This path should contain include header files and precompiled libraries for Linux, OS X, etc..
+Get the Superpowered SDK, e.g.
 
 ```
 git clone https://github.com/superpoweredSDK/Low-Latency-Android-Audio-iOS-Audio-Engine
 ```
+
+Run `npm install` to install the dependencies and build the node native addon. 
 
 
 This boilerplate code demonstrates a few simple things using pixi & superpowered audio:

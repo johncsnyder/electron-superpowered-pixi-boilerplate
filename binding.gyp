@@ -2,7 +2,7 @@
     "targets": [
         {
             "target_name": "filter",
-            "sources": [ "filter.cc" ],
+            "sources": [ "src/filter.cc" ],
             "include_dirs": [
                 "<!(node -e \"require('nan')\")",
                 "$(SUPERPOWERED_ROOT)"
