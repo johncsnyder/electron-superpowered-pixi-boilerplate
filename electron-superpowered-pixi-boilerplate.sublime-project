@@ -1,0 +1,26 @@
+{
+	"build_systems":
+	[
+		{
+			"name": "Install",
+			"shell_cmd": "cd $project_path && npm install"
+		},
+		{
+			"name": "Run",
+			"shell_cmd": "cd $project_path && npm start"
+		},
+		{
+			"name": "Build OS X",
+			"shell_cmd": "cd $project_path && npm build_osx"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "../SuperpoweredSDK"
+		}
+	]
+}

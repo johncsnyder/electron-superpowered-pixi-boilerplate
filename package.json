@@ -1,0 +1,21 @@
+{
+  "name": "electron-superpowered-pixi-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for Electron integrated with Superpowered Audio and WebGL",
+  "main": "main.js",
+  "devDependencies": {
+    "electron-connect": "0.6.1",
+    "gulp": "3.9.1",
+    "nan": "2.6.2"
+  },
+  "scripts": {
+    "start": "gulp serve",
+    "build_osx": "electron-packager ./ --platform=darwin --arch=x64 --overwrite --out build/"
+  },
+  "dependencies": {
+    "bindings": "1.2.1",
+    "pixi.js": "4.5.3"
+  },
+  "author": "John Snyder",
+  "license": "MIT"
+}
