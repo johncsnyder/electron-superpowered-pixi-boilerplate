@@ -1,5 +1,16 @@
 var fs = require('fs')
-var filter = require('bindings')('filter')  // Load addon
+var path = require('path')
+
+// Load addon
+try {
+		// Packaged .app electron puts filter.node into .app/Contents/Resources/
+		// while audio.js is in .app/Contents/Resources/app/
+    var filter = require(path.join(__dirname, '../filter'))
+}
+catch(err) {
+	// Dev mode
+	var filter = require(path.join(__dirname, 'build/Release/filter'))
+}
 
 
 // Create an audio context
@@ -13,7 +24,7 @@ function int16tofloat32 (x) {
 
 
 // Load test audio file and filter
-var data = filter.filter('resources/test.mp3')
+var data = filter.filter(path.join(__dirname, 'resources/test.mp3'))
 var numSamples = data.length / 2
 var channels = 2
 
@@ -31,13 +42,13 @@ for (var i = 0; i < numSamples; i++) {
 }
 
 
-// Get an AudioBufferSourceNode.
-// This is the AudioNode to use when we want to play an AudioBuffer
+// // Get an AudioBufferSourceNode.
+// // This is the AudioNode to use when we want to play an AudioBuffer
 // var source = audioCtx.createBufferSource()
-// set the buffer in the AudioBufferSourceNode
+// // set the buffer in the AudioBufferSourceNode
 // source.buffer = audioBuffer
-// connect the AudioBufferSourceNode to the
-// destination so we can hear the sound
+// // connect the AudioBufferSourceNode to the
+// // destination so we can hear the sound
 // source.connect(audioCtx.destination)
-// start the source playing
+// // start the source playing
 // source.start()

@@ -1,7 +1,12 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
-var client = require('electron-connect').client
+const console = require('console')
+
+
+function isDev() {
+  return process.env.NODE_ENV == 'DEVELOPMENT'
+}
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -20,9 +25,12 @@ function createWindow () {
     slashes: true
   }))
 
-  client.create(win);
+  if (isDev()) {
+    var client = require('electron-connect').client
+    client.create(win);
+  }
 
-  // win.webContents.openDevTools()
+  win.openDevTools()
 
   win.on('closed', () => {
     win = null
@@ -54,6 +62,8 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

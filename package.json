@@ -5,15 +5,14 @@
   "main": "main.js",
   "devDependencies": {
     "electron-connect": "0.6.1",
-    "gulp": "3.9.1",
-    "nan": "2.6.2"
+    "gulp": "3.9.1"
   },
   "scripts": {
-    "start": "gulp serve",
-    "build_osx": "electron-packager ./ --platform=darwin --arch=x64 --overwrite --out build/"
+    "start": "NODE_ENV=DEVELOPMENT gulp serve",
+    "build:osx": "electron-packager ./ --electron-version=1.6.11 --extra-resource=build/Release/filter.node --platform=darwin --arch=x64 --overwrite --prune=true --out build/"
   },
   "dependencies": {
-    "bindings": "1.2.1",
+    "nan": "2.6.2",
     "pixi.js": "4.5.3"
   },
   "author": "John Snyder",

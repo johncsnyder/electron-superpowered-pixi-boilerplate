@@ -1,4 +1,5 @@
 var PIXI = require('pixi.js')
+var path = require('path')
 
 
 // Initalize the PIXI webgl renderer
@@ -36,8 +37,9 @@ stage.addChild(text)
 // Load an test image sprite
 let loader = PIXI.loader 
 
-loader.add('play', 'resources/play.png')
-loader.add('stop', 'resources/stop.png')
+
+loader.add('play', path.join(__dirname, 'resources/play.png'))
+loader.add('stop', path.join(__dirname, 'resources/stop.png'))
 
 loader.once('complete', (loader, resources) => {
   var play = new PIXI.Sprite(resources.play.texture)
