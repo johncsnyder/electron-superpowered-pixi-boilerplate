@@ -16,5 +16,9 @@
     "pixi.js": "4.5.3"
   },
   "author": "John Snyder",
-  "license": "MIT"
+  "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/johncsnyder/electron-superpowered-pixi-boilerplate.git"
+  }
 }
